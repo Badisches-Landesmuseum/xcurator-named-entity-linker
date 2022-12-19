@@ -1,0 +1,6 @@
+# Whitelist approach
+# Exclude everything: 
+*
+# Include as exceptions
+!/opt/conda
+!named_entities_service

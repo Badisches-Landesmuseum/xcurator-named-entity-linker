@@ -1,0 +1,32 @@
+scalar DateTime
+
+type Query {
+    entities(text: String!): [NamedEntity!]!
+}
+
+type NamedEntity {
+    id: ID!
+    literal: String!
+    type: EntityType!
+    startPosition: Int!
+    endPosition: Int!
+    knowledgeBaseId: String # Contains Letter at the beginning
+    knowledgeBaseUrl: String
+    createdAt: DateTime!
+    updatedAt: DateTime!
+}
+
+enum EntityType {
+    ORG
+    MISC
+    PER
+    LOC
+}
+
+enum AnalyseStatus {
+    NOT_STARTED,
+    PENDING,
+    DONE,
+    VERIFIED,
+    ERROR
+}

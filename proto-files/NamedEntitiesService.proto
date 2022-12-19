@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package dreipc.asset.document.namedentities;
+
+option java_package = "dreipc.q8r.proto.asset.document";
+option java_outer_classname = "NamedEntitiesProtos";
+import "google/protobuf/timestamp.proto";
+
+
+message NamedEntitiesDetectionAction {
+  string id = 1;
+  string content = 2;
+  ModelTypeProto model = 3;
+}
+
+
+message NamedEntityDeletedEvent {
+  string id = 1;
+}
+
+
+message NamedEntitiesResultEventProto {
+  string sourceId = 1;
+  repeated NamedEntityProto entities = 2;
+  StatusProto status = 3;
+  ModelTypeProto model = 4;
+  repeated string tags = 5;
+}
+
+
+message NamedEntitiesSavedEventProto {
+  string id = 1;
+  repeated NamedEntityProto entities = 2;
+  repeated string tags = 3;
+}
+
+
+enum StatusProto {
+  NOT_STARTED = 0;
+  PENDING = 1;
+  DONE = 2;
+  VERIFIED = 3;
+  ERROR = 4;
+}
+
+enum ModelTypeProto {
+  GENERAL = 0;
+}
+
+
+message NamedEntityProto {
+  string id = 1;
+  string literal = 2;
+  string type = 3;
+  string sourceId = 4;
+  int32  startPosition = 5;
+  int32  endPosition = 6;
+  string knowledgeBaseId = 7;
+  string knowledgeBaseUrl = 8;
+}

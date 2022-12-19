@@ -1,0 +1,9 @@
+server:
+  port: 80
+
+rabbitmq:
+  host: ${RABBITMQ_HOST:localhost}
+  port: ${RABBITMQ_PORT:5672}
+  username: ${RABBITMQ_USERNAME:dreipc}
+  password: ${RABBITMQ_PASSWORD:password}
+  vhost: ${RABBITMQ_VHOST:/}

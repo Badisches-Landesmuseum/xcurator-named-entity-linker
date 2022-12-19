@@ -1,0 +1,26 @@
+name: named-entities-service
+channels:
+  - conda-forge
+  - anaconda
+dependencies:
+  - python=3.8
+  - uvicorn==0.17.6
+  - fastapi==0.78.0
+  - protobuf
+  - spacy=3.3.1
+  - pymongo==4.1.1
+  - dateparser
+  - tqdm
+  - thinc
+  - pip
+  - aiofiles
+  - pip:
+      - anytree==2.8.0
+      - spacyopentapioca==0.1.6
+      - unicode==2.9
+      - injectable==3.4.7
+      - version_query==1.1.0 #  python<=3.8
+      - wget
+      - ariadne==0.15.1
+      - ./libs/3pc-py-config-0.0.7.tar.gz
+      - ./libs/3pc-rabbitmq-proto-lib-0.0.79.tar.gz
